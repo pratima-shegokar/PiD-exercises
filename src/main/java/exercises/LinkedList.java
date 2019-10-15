@@ -49,10 +49,20 @@ public class LinkedList {
         }
     }
     public int size() {
-        return 0;
+        int counter = 0;
+        Node current = first;
+        if(current == null){
+            return 0;
+        } else{
+            while(current.next != null){
+                current =current.next;
+                counter = counter + 1;
+            }
+            //this is off by one error
+            return counter+1;
+        }
 
     }
-
     public boolean isEmpty() {
          if(first == null) {
             return true;

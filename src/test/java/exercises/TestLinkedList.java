@@ -28,9 +28,16 @@ public class TestLinkedList {
     }
     @Test
     public void testAddInEmptyList() {
-        LinkedList list  = new LinkedList();
+        LinkedList list = new LinkedList();
         list.add(10);
         assertEquals(false, list.isEmpty());
 
+    }
+    @Test
+    public void testShouldReturnSize() {
+        LinkedList list = new LinkedList();
+        list.add(10);
+        list.add(20);
+        assertEquals(2, list.size());
     }
 }
