@@ -48,14 +48,15 @@ public class LinkedList {
 
         }
     }
+
     public int size() {
         int counter = 0;
         Node current = first;
         if(current == null){
             return 0;
-        } else{
+        } else {
             while(current.next != null){
-                current =current.next;
+                current = current.next;
                 counter = counter + 1;
             }
             //this is off by one error
@@ -69,4 +70,34 @@ public class LinkedList {
         }
         return false;
     }
+
+    public void printLL() {
+        if (this.first == null) {
+            return;
+        }
+        //print all nodes
+        Node tempNode = this.first;
+        while (tempNode != null) {
+            System.out.print(tempNode.elem+ "->");
+            tempNode = tempNode.next;
+        }
+        System.out.println("NULL");
+    }
+
+    public int indexOf(int elem) {
+        int index = 0;
+        Node current = first;
+        if (current == null) {
+            return -1;
+        }
+        while(current.next != null && current.elem != elem){
+            current = current.next;
+            index = index + 1;
+        }
+        if(current.elem == elem)
+            return index;
+        return -1;
+    }
 }
+
+
